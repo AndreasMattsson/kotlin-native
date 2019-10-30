@@ -18,6 +18,11 @@
 //    return len;
 //}
 
+typedef int __attribute__((__vector_size__(16))) vInt;
+vInt vec_equals(vFloat v1, vFloat v2) {
+	return v1 == v2;
+}
+
 vFloat getVFloat(float f0, float f1, float f2, float f3) {
 	vU128 v;
 	vFloat ret = {f0, f1, f2, f3};
@@ -35,17 +40,6 @@ float my_simd_distance(vFloat v1, vFloat v2) {
 
 void printVFloat(vFloat v) {
 	fprintf(stderr, "vFloat(%f, %f, %f, %f)\n", v[0], v[1], v[2], v[3]);
-}
-
-void Kotlin_Vector_set(vFloat* thiz, uint32_t index, float value) {
-	if (index < 4) {
-		((float*)thiz)[index] = value;
-	}
-}
-
-void setDouble(double x) {
-	static double f;
-	f = x;
 }
 
 #ifdef MAIN
@@ -68,7 +62,7 @@ int main(void) {
 	printVFloat(ceil);
 
 	vFloat f2 = {1, 3.162, 10, 31};
-	vFloat lg = vlog10f(f2);
+//	vFloat lg = vlog10f(f2);
 	printVFloat(ceil);
 
 	return 0;

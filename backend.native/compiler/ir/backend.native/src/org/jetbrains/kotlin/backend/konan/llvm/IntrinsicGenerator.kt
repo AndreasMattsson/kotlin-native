@@ -493,6 +493,7 @@ internal class IntrinsicGenerator(private val environment: IntrinsicGeneratorEnv
                 icmpEq(bitcast(integerType, first), bitcast(integerType, second))
             }
             llvm.LLVMTypeKind.LLVMIntegerTypeKind, llvm.LLVMTypeKind.LLVMPointerTypeKind -> icmpEq(first, second)
+            LLVMTypeKind.LLVMVectorTypeKind -> fcmpEq(first, second)  // type of result is <4 x i1>
             else -> error(typeKind)
         }
     }
