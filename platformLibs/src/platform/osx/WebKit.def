@@ -1,7 +1,0 @@
-depends = AppKit ApplicationServices CFNetwork CoreData CoreFoundation CoreGraphics CoreImage CoreServices CoreText CoreVideo DiskArbitration Foundation IOKit IOSurface ImageIO JavaScriptCore Metal OpenGLCommon QuartzCore Security darwin libkern osx posix
-language = Objective-C
-package = platform.WebKit
-modules = WebKit
-
-compilerOpts = -framework WebKit
-linkerOpts = -framework WebKit

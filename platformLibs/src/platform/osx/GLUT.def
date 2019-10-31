@@ -1,7 +1,0 @@
-depends = OpenGL OpenGLCommon darwin posix
-language = Objective-C
-package = platform.GLUT
-modules = GLUT
-
-compilerOpts = -framework GLUT
-linkerOpts = -framework GLUT
