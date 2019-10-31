@@ -1,13 +1,32 @@
 import UIKit
+import kotlin_library
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func testState() {
+        print("State Test")
+        print("State Random inherited instance val 1: \(StateTest.InheritingSingleton().randomInstanceVal)")
+        print("State Random inherited instance val 2: \(StateTest.InheritingSingleton().randomInstanceVal)")
+        print("State Random inherited instance lazy 1: \(StateTest.InheritingSingleton().randomInstanceLazy)")
+        print("State Random inherited instance lazy 2: \(StateTest.InheritingSingleton().randomInstanceLazy)")
+        print("State Random file val 1: \(StateTest.InheritingSingleton().randomFileLevelVal)")
+        print("State Random file val 2: \(StateTest.InheritingSingleton().randomFileLevelVal)")
+        print("State Random file lazy 1: \(StateTest.InheritingSingleton().randomFileLevelLazy)")
+        print("State Random file lazy 2: \(StateTest.InheritingSingleton().randomFileLevelLazy)")
+        print("State Random independent val 1: \(StateTest.IndependentSingleton().randomSingletonSimple)")
+        print("State Random independent val 2: \(StateTest.IndependentSingleton().randomSingletonSimple)")
+        print("State Random independent lazy 1: \(StateTest.IndependentSingleton().randomSingletonLazy)")
+        print("State Random independent lazy 2: \(StateTest.IndependentSingleton().randomSingletonLazy)")
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        testState()
+        
         return true
     }
 
