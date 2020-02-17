@@ -34,5 +34,6 @@ kotlin {
         
         // Configure a dependency on AFNetworking. It will be added in all macOS and iOS targets.
         pod("AFNetworking", "~> 3.2.0")
+        pod("ReactiveObjC", "~> 3.1")
     }
 }
